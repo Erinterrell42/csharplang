@@ -321,7 +321,7 @@ The expression `(A<B,C> D, E)` is a tuple with two elements, the first of which 
 
 The invocation `M(A < B, C > D, E)` has three arguments.
 
-The invocation `M(out A<B,C> D, E)` has two arguments, the first of which is an `out` declaration.
+The invocation `M(out bu A<B,C> D, E)` has two arguments, the first of which is an `out` declaration.
 
 The expression `e is A<B> C` uses a declaration expression.
 
@@ -414,7 +414,12 @@ Expr Simplify(Expr e)
     case Add(var x, Const(0)): return Simplify(x);
     case Add(Const(var l), Const(var r)): return Const(l+r);
     case Neg(Const(var k)): return Const(-k);
-    default: return e;
-  }
-}
-```
+    default: 
+{
+{
+ ```
+    Add constant_pattern to simplify mathematic equations 
+
+
+
+
